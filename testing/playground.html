@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>LightRange.js playground</title>
+
+    <style type="text/css">
+      #square {
+        position: absolute;
+        min-width: 1px;
+        background: red;
+      }
+    </style>
+  </head>
+  <body>
+
+    <div>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+        cillum dol<button>button</button> ore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </p>
+    </div>
+
+    <div>
+      <p>
+        Lorem ipsum dolor <img src="../doc/assets/screenshot.png" />sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+        cillum dol<button>button</button> ore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </p>
+    </div>
+
+    <div contenteditable="true">
+      <h1>Contenteditable</h1>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        quis nostrud exercitation <img src="../doc/assets/screenshot.png" />ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+        cillum dol<button>button</button> ore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </p>
+    </div>
+
+    <div>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+        cillum dol<button>button</button> ore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </p>
+    </div>
+
+    <div id="square"></div>
+
+    <script type="text/javascript" src="../lightrange.ie8-.js"></script>
+    <script type="text/javascript">
+      var square = document.getElementById('square');
+
+      function setSquare() {
+        var range = lightrange();
+        console.log(range);
+        square.style.width = range.width + 'px';
+        square.style.height = range.height + 'px';
+        square.style.top = range.yStart + 'px';
+        square.style.left = range.xStart + 'px';
+      }
+
+      if (document.addEventListener) {
+          console.info('modern browser');
+          document.addEventListener('DOMContentLoaded', function () {
+            document.addEventListener('mouseup', function () {
+              setSquare();
+            });
+          });
+      } else {
+        console.info('old browser / IE8-');
+        document.attachEvent('onload', function () {
+          document.attachEvent('onmouseup', function () {
+            setSquare();
+          });
+        });
+      }
+    </script>
+  </body>
+</html>
