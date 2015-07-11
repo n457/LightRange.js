@@ -1,5 +1,5 @@
 // LightRange.js - A simple and lightweight selection, range and caret information library in native JavaScript.
-// Version 1.0.0
+// Version 1.1.0
 // MIT License
 // Copyright (c) 2015 Bertrand Vignaud-Lerouge / n457 - https://github.com/n457
 
@@ -27,12 +27,15 @@ function lightrange() {
       rect = range.getClientRects()[0];
     }
 
-    data.width = rect.width;
-    data.height = rect.height;
+    // If the caret is on an empty line or if the range contains noting or new lines only, 'rect' will be undefined.
+    if (rect) {
+      data.width = rect.width;
+      data.height = rect.height;
 
-    // By default, x and y are calculated at the beginning of the range.
-    data.xStart = rect.left;
-    data.yStart = rect.top;
+      // By default, x and y are calculated at the beginning of the range.
+      data.xStart = rect.left;
+      data.yStart = rect.top;
+    }
 
     data.text = selection.toString();
 
@@ -45,8 +48,11 @@ function lightrange() {
     // We have to update the rect with getClientRects() because the range became a caret.
     rect = range.getClientRects()[0];
 
-    data.xEnd = rect.left;
-    data.yEnd = rect.top;
+    if (rect) {
+      data.xEnd = rect.left;
+      data.yEnd = rect.top;
+    }
+
   }
 
   // IE 8 and below.

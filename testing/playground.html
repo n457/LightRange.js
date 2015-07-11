@@ -83,7 +83,7 @@
           });
       } else {
         console.info('old browser / IE8-');
-        document.attachEvent('onload', function () {
+        document.attachEvent('onreadystatechange', function () {
           document.attachEvent('onmouseup', function () {
             setSquare();
           });
