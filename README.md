@@ -1,5 +1,5 @@
 # LightRange.js
-#### v.1.1.0
+#### v.1.1.1
 
 A **simple** and lightweight **selection, range and caret information** library in **native JavaScript**.
 

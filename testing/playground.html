@@ -63,10 +63,11 @@
 
     <script type="text/javascript" src="../lightrange.ie8-.js"></script>
     <script type="text/javascript">
-      var square = document.getElementById('square');
+      var square = document.getElementById('square'),
+          range = lightrange();
 
       function setSquare() {
-        var range = lightrange();
+        range = lightrange();
         console.log(range);
         square.style.width = range.width + 'px';
         square.style.height = range.height + 'px';
@@ -75,18 +76,14 @@
       }
 
       if (document.addEventListener) {
-          console.info('modern browser');
-          document.addEventListener('DOMContentLoaded', function () {
-            document.addEventListener('mouseup', function () {
-              setSquare();
-            });
-          });
+        console.info('modern browser');
+        document.addEventListener('mouseup', function () {
+          setSquare();
+        });
       } else {
         console.info('old browser / IE8-');
-        document.attachEvent('onreadystatechange', function () {
-          document.attachEvent('onmouseup', function () {
-            setSquare();
-          });
+        document.attachEvent('onmouseup', function () {
+          setSquare();
         });
       }
     </script>
