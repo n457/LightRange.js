@@ -1,34 +1,30 @@
 # LightRange.js
-#### v.1.1.1
+#### v.2.0.0
 
-A **simple** and lightweight **selection, range and caret information** library in **native JavaScript**.
+A **simple** and lightweight **selection, range and caret information** library in **native JavaScript**, with an additional selection **save & restore** system.
 
-![](doc/assets/screenshot.png)
+![Screenshot](screenshot.png)
 
 
 
 ### Usage
 
 LightRange.js is written in native JavaScript, so it **doesn't need any dependency**.
-Just include [lightrange.js](lightrange.js) or [lightrange.min.js](lightrange.min.js) in `<head></head>` **or just before** `</body>` (**recommended**).
+Just include [LightRange.min.js](LightRange.min.js) in `<head></head>` or just before `</body>` (**recommended**).
+
+**Important** : [src/LightRange.ES6.js](src/LightRange.ES6.js) is the source code of the library, written in **ES6** and should be used directly for production in **very specific cases**. ES6 is a very recent JavaScript syntax, not supported by old browsers. The use of the minimized & regular JavaScript version [LightRange.min.js](LightRange.min.js) **is recommended**.
 
 ```html
-  <script src="/your-custom-path/lightrange.min.js"></script>
+  <script src="/your-custom-path/LightRange.min.js"></script>
   <script src="/another-path/your-script.js"></script>
 </body>
 ```
 
 
 
-Then, call the **lightrange function** :
+### API
 
-```javascript
-var range = lightrange();
-```
-
-
-
-LightRange.js provides **10 information** about the current range :
+`lightrange.getSelectionInfo()` returns an `Object` (see below) or `null` if the feature is not supported by the browser.
 
 * `xStart` : **X** coordinate at the **beginning** of the range, in **pixels**.
 * `yStart` : **Y** coordinate at the **beginning** of the range, in **pixels**.
@@ -42,24 +38,26 @@ LightRange.js provides **10 information** about the current range :
 * `length` : **length** of the range, in **characters number**.
 
 
+`lightrange.saveSelection()` & `lightrange.restoreSelection()` return a `Range` object or `null` if the features are not supported by the browser.
+
+
 
 ### Compatibility
 
-LightRange.js is **compatible with all modern browsers and with Internet Explorer 9 and above**.
+LightRange.js is compatible with **all modern browsers** and with **some old browsers** like **Internet Explorer 8**.
 
-[lightrange.ie8-.js](lightrange.ie8-.js) or [lightrange.ie8-.min.js](lightrange.ie8-.min.js) also **include Internet Explorer 8 and below support**. However, the library **doesn't provide charStart and charEnd for Internet Explorer 8 and below**.
+However, the library **doesn't provide charStart and charEnd for old browsers**.
 
-LightRange.js is **not compatible** with `<input type="text" />` and `<textarea></textarea>` elements.
+It's compatible with `contenteditable` elements, but **not compatible** with editable `<input type="text" />` and `<textarea></textarea>` elements.
 
 
 
 ### Notes
 
-* See [testing/playground.html](testing/playground.html) an example.
-
-* If you like LightRange.js, please ![](doc/assets/star-repo.png) this repository so it can **easily be found** and **help other developers**.
-
-**Thank you !** :wink:
+* [src/LightRange.ES6.js](src/LightRange.ES6.js) is converted **from ES6 to regular JS** ([LightRange.min.js](LightRange.min.js)) via [Google Closure Compiler](https://closure-compiler.appspot.com/home).
+* LightRange.js is based on the work of [Tim Down](https://github.com/timdown) and his Stack Overflow answers.
+* This library is a very basic & lightweight alternative to the [Rangy](https://github.com/timdown/rangy) library (by [Tim Down](https://github.com/timdown)).
+* If you like LightRange.js, star this repository so it can **easily be found** and then **help other developers**.
 
 
 
