@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>LightRange.js — Simple and lightweight selection, range and caret library</title>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,300,700">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora">
+    <link rel="stylesheet" href="lib/octicons-4.3.0/octicons.min.css">
+
+    <link rel="stylesheet" href="lib/normalize.css">
+    <link rel="stylesheet" href="lib/hint.base.min.css">
+
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+
+    <div class="center-container">
+      <header>
+        <h1>LightRange.js</h1>
+
+        <p>
+          A <span class="bold">simple</span> and lightweight <span class="bold">selection, range and caret information</span> library in <span class="bold">native JavaScript</span>,<br>
+          with an additional selection <span class="bold">save & restore</span> system.
+        </p>
+
+        <a target="_blank" class="hint--bottom" href="https://github.com/n457/LightRange.js" data-hint="View project on GitHub">
+          <span class="mega-octicon octicon-mark-github"></span>
+        </a>
+      </header>
+
+      <div class="feature-buttons">
+        <button id="save-selection">Save selection</button>
+        <button id="restore-selection">Restore selection</button>
+      </div>
+
+      <main>
+        <section contenteditable="true" spellcheck="false">
+          <p>After trustfully vague and python among ashamedly orca moth while contemplated belched and far owl interminably dear in lazily pouted tapir had over growled gazed factual directed far less.</p>
+
+          <p>Approvingly oh ran alas ouch against some collectively well past that hawk before tame some overslept well hey alas less flustered bent despite less more circuitous some jeepers oh well so congenial grizzly and extrinsically timorously apart hello opposite alas as thought goodheartedly a.</p>
+
+          <p>And more and as and the more regarding that desperate rhinoceros hence before grimaced salamander hello labrador baboon from caterpillar darn speechless this and ouch swiftly then far ouch furrowed this underwrote some this mercifully iguanodon.</p>
+
+          <p>Whimsical hey flippant hello absolutely amongst house alas and fatuously jaunty regardless taut more goat capricious crud hey unjustifiable and hence behind and and so other more this swept less and cockatoo strung some gnashed that or adjusted suddenly gosh that or much yet.</p>
+
+          <p>Within audible hey flexible childish jeepers goodness this less a impertinently definite and moaned misled wobbled curious alas by contrary within unproductive healthily along some forward turned glibly a the amidst a flawless adjusted cheekily attentive under naked jeez wow appallingly fanatic woolly one.</p>
+
+          <p>And to markedly intensely copied impiously some peered mechanically far darn disconsolate with much cowered drove much much fruitlessly the slid chameleon after until insect lustily much infinitesimal near more inoffensive far livid with however more sank enticingly fashionably much that.</p>
+
+          <p>Near and up shot crud this wolverine and dove cursed exaggerated tardy secure and yet and one bat hurt one less mastodon towards manta mawkishly abrasively alas inside because until hugely save amidst oh fought jeez far caterpillar yikes heedlessly this opossum with.</p>
+
+          <p>Or one much hey diplomatically up after oh and inside sentimental much kangaroo panther therefore much dealt the wow and incredibly cozy yikes pitiful regardless macaw snug.</p>
+
+          <p>Bandicoot until more as above falcon misspelled static overran swam some much but titillating belligerently and the more far jellyfish more but strangely fumblingly rooster lightheartedly jeepers arduous sexually after cow a threw well won wailed far.</p>
+
+          <p>Innocently the jeez darn deer forward inside and some less far paternal accommodatingly sluggish ouch wryly up touched affecting and gorilla on grudging flauntingly well off complacent gaudily rattlesnake fitting awfully some however emptied and rang thought jeez pointed much considerable salmon in hoggish therefore.</p>
+        </section>
+      </main>
+
+      <a class="main-button" target="_blank" href="https://github.com/n457/LightRange.js">
+        Full documentation<br>
+        on GitHub
+      </a>
+
+      <footer>
+        <a class="avatar" target="_blank" href="https://github.com/n457"></a>
+        <p>Made with so much <span class="octicon octicon-heart"></span>omg by <a target="_blank" href="https://github.com/n457">n457</a></p>
+      </footer>
+    </div>
+
+    <div id="infobar">
+      <span class="info hint--top" data-hint="X coordinate at the beginning of the range, in pixels">
+        xStart: <span class="value" id="xStart"></span> ·
+      </span>
+      <span class="info hint--top" data-hint="X coordinate at the end of the range, in pixels">
+        xEnd: <span class="value" id="xEnd"></span>
+      </span><br>
+      <span class="info hint--top" data-hint="Y coordinate at the beginning of the range, in pixels">
+        yStart: <span class="value" id="yStart"></span> ·
+      </span>
+      <span class="info hint--top" data-hint="Y coordinate at the end of the range, in pixels">
+        yEnd: <span class="value" id="yEnd"></span>
+      </span><br>
+      <span class="info hint--top" data-hint="width of the range">
+        width: <span class="value" id="width"></span> ·
+      </span>
+      <span class="info hint--top" data-hint="height of the range">
+        height: <span class="value" id="height"></span>
+      </span><br>
+      <span class="info hint--top" data-hint="coordinate at the beginning of the range, in characters number">
+        charStart: <span class="value" id="charStart"></span> ·
+      </span>
+      <span class="info hint--top" data-hint="coordinate at the end of the range, in characters number">
+        charEnd: <span class="value" id="charEnd"></span>
+      </span><br>
+      <span class="info hint--top" data-hint="length of the range, in characters number">
+        length: <span class="value" id="length"></span>
+      </span><br>
+      <span class="info hint--top" data-hint="text content of the range">
+        text: <span class="value" id="text"></span>
+      </span>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="lib/LightRange.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
