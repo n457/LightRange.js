@@ -56,16 +56,21 @@ $(function () {
     positionInfobar();
   });
 
-  $('#save-selection').on('click', function () {
+  $('#save-selection').on('click', function (event) {
     lightrange.saveSelection();
     // Preventing from display empty infobar if clicked at start
-    return false;
+    event.stopPropagation();
   });
-  $('#restore-selection').on('click', function () {
+  $('#restore-selection').on('click', function (event) {
     lightrange.restoreSelection();
     positionInfobar();
     // Preventing from display empty infobar if clicked at start
-    return false;
+    event.stopPropagation();
+  });
+
+  $('.main-button').on('click', function (event) {
+    // Preventing from display empty infobar if clicked at start
+    event.stopPropagation();
   });
 
 });
