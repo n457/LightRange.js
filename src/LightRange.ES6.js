@@ -3,7 +3,7 @@
 // MIT License - Copyright (c) 2015 Bertrand Vignaud-Lerouge / n457 - https://github.com/n457
 
 
-// https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Classes
+// https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Classes
 class LightRange {
 
   constructor() {
