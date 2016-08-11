@@ -3,9 +3,11 @@
 
 A **simple** and lightweight **selection, range and caret information** library in **native JavaScript**, with an additional selection **save & restore** system.
 
-http://n457.github.io/LightRange.js/
-
-<img src="screenshot.png" align="center">
+<p align="center">
+  http://n457.github.io/LightRange.js/<br>
+  <br>
+  <img src="screenshot.png" alt="LightRange.js demo site screenshot">
+</p>
 
 
 
