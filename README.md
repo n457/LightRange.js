@@ -5,7 +5,7 @@ A **simple** and lightweight **selection, range and caret information** library 
 
 http://n457.github.io/LightRange.js/
 
-![Screenshot](screenshot.png)
+<img src="screenshot.png" align="center">
 
 
 
