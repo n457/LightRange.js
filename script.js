@@ -1,4 +1,4 @@
-// IE8+ compatible demo site
+// IE8+ compatible demo site script
 
 $(function () {
   var $xStart = $('#xStart');
@@ -13,7 +13,8 @@ $(function () {
   var $charStart = $('#charStart');
   var $charEnd = $('#charEnd');
 
-  var $length = $('#length');
+  var $characters = $('#characters');
+  var $charactersAll = $('#charactersAll');
 
   var $text = $('#text');
 
@@ -35,7 +36,8 @@ $(function () {
     $charStart.text(selectionInfo.charStart);
     $charEnd.text(selectionInfo.charEnd);
 
-    $length.text(selectionInfo.length);
+    $characters.text(selectionInfo.characters);
+    $charactersAll.text(selectionInfo.charactersAll);
 
     $text.text(selectionInfo.text);
 
