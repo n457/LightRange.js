@@ -1,5 +1,5 @@
 # LightRange.js
-#### v.2.0.0
+#### v.2.1.1
 
 A **simple** and lightweight **selection, range and caret information** library in **native JavaScript**, with an additional selection **save & restore** system.
 
@@ -32,12 +32,15 @@ Just include [LightRange.min.js](LightRange.min.js) in `<head></head>` or just b
 * `yStart` : **Y** coordinate at the **beginning** of the range, in **pixels**.
 * `xEnd` : **X** coordinate at the **end** of the range, in **pixels**.
 * `yEnd` : **Y** coordinate at the **end** of the range, in **pixels**.
-* `width` : **width** of the range.
-* `height` : **height** of the range.
-* `text` : **text content** of the range.
-* `charStart` : coordinate at the **beginning** of the range, in **characters number**.
-* `charEnd` : coordinate at the **end** of the range, in **characters number**.
-* `length` : **length** of the range, in **characters number**.
+* `width` : **Width** of the range.
+* `height` : **Height** of the range.
+* `charStart` : Coordinate at the **beginning** of the range, in **characters number**.
+* `charEnd` : Coordinate at the **end** of the range, in **characters number**.
+* `characters` : **Number of characters** in the range, **without white spaces**.
+* `charactersAll` : **Number of characters** in the range, **including white spaces**.
+* `text` : **Text content** of the range.
+
+**Note** : If you want to count more than characters (paragraphs, words, etc.), you can pass the LightRange.js `text` property to the [Countable.js](https://github.com/RadLikeWhoa/Countable) library.
 
 
 `lightrange.saveSelection()` & `lightrange.restoreSelection()` return a `Range` object or `null` if the features are not supported by the browser.
