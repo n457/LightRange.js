@@ -1,5 +1,5 @@
 # LightRange.js
-#### v.2.1.2
+#### v.2.2.0
 
 A **simple** and lightweight **selection, range and caret information** library in **native JavaScript**, with an additional selection **save & restore** system.
 
@@ -24,6 +24,11 @@ Just include [LightRange.min.js](LightRange.min.js) in `<head></head>` or just b
 </body>
 ```
 
+```javascript
+var range = lightrange.saveSelection();
+lightrange.restoreSelection(range);
+```
+
 
 
 ### API
@@ -45,7 +50,7 @@ Just include [LightRange.min.js](LightRange.min.js) in `<head></head>` or just b
 **Note :** If you want to count more than characters (paragraphs, words, etc.), you can pass the LightRange.js `text` property to the [Countable.js](https://github.com/RadLikeWhoa/Countable) library.
 
 
-`lightrange.saveSelection()` & `lightrange.restoreSelection()` return a `Range` object or `null` if the features are not supported by the browser.
+`lightrange.saveSelection()` & `lightrange.restoreSelection(range)` return a `Range` object or `null` if the features are not supported by the browser.
 
 
 

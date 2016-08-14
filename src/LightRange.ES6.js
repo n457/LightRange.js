@@ -1,15 +1,10 @@
 // LightRange.js - A simple and lightweight selection, range and caret information library in native JavaScript, with an additional selection save & restore system. - https://github.com/n457/LightRange.js
-// Version 2.1.2
+// Version 2.2.0
 // MIT License - Copyright (c) 2015 Bertrand Vignaud-Lerouge / n457 - https://github.com/n457
 
 
 // https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Classes
 class LightRange {
-
-  constructor() {
-    // Used for save / restore selection system.
-    this.savedSelection;
-  }
 
   getSelectionInfo() {
     // Info data that will be returned by the method.
@@ -118,41 +113,39 @@ class LightRange {
     if (window.getSelection) {
       const selection = window.getSelection();
       if (selection.getRangeAt && selection.rangeCount) {
-        this.savedSelection = selection.getRangeAt(0);
+        return selection.getRangeAt(0);
       }
     }
     // IE 8 and other old browsers.
     else if (document.selection && document.selection.createRange) {
-      this.savedSelection = document.selection.createRange();
+      return document.selection.createRange();
     }
     // The browser doesn't support the feature
     else {
       return null;
     }
-
-    return this.savedSelection;
   }
 
 
-  restoreSelection() {
-    if (this.savedSelection) {
+  restoreSelection(rangeToRestore) {
+    if (rangeToRestore) {
       // Modern browsers.
       if (window.getSelection) {
         const selection = window.getSelection();
         selection.removeAllRanges();
-        selection.addRange(this.savedSelection);
+        selection.addRange(rangeToRestore);
       }
       // IE 8 and other old browsers.
-      else if (document.selection && this.savedSelection.select) {
-        this.savedSelection.select();
+      else if (document.selection && rangeToRestore.select) {
+        rangeToRestore.select();
       }
       // The browser doesn't support the feature
       else {
         return null;
       }
-    }
 
-    return this.savedSelection;
+      return rangeToRestore;
+    }
   }
 
 
