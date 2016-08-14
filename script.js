@@ -1,6 +1,7 @@
 // IE8+ compatible demo site script
 
 $(function () {
+
   var $xStart = $('#xStart');
   var $xEnd = $('#xEnd');
 
@@ -19,6 +20,9 @@ $(function () {
   var $text = $('#text');
 
   var $infobar = $('#infobar');
+
+
+  var lastSelection;
 
 
   var positionInfobar = function () {
@@ -59,12 +63,12 @@ $(function () {
   });
 
   $('#save-selection').on('click', function (event) {
-    lightrange.saveSelection();
+    lastSelection = lightrange.saveSelection();
     // Preventing from display empty infobar if clicked at start
     event.stopPropagation();
   });
   $('#restore-selection').on('click', function (event) {
-    lightrange.restoreSelection();
+    lightrange.restoreSelection(lastSelection);
     positionInfobar();
     // Preventing from display empty infobar if clicked at start
     event.stopPropagation();
