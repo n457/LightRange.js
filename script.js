@@ -47,7 +47,7 @@ $(function () {
 
 
 
-  $('body').on('click', function () {
+  $('body').on('mouseup', function () {
     positionInfobar();
     $infobar.addClass('active');
   });
