@@ -1,5 +1,5 @@
 // LightRange.js - A simple and lightweight selection, range and caret information library in native JavaScript, with an additional selection save & restore system. - https://github.com/n457/LightRange.js
-// Version 2.1.1
+// Version 2.1.2
 // MIT License - Copyright (c) 2015 Bertrand Vignaud-Lerouge / n457 - https://github.com/n457
 
 
@@ -94,10 +94,16 @@ class LightRange {
       return null;
     }
 
-    // From Countable JS lib : https://github.com/RadLikeWhoa/Countable
-    // https://github.com/RadLikeWhoa/Countable/blob/master/Countable.js#L210
-    data.characters = data.text.replace(/\s/g, '').length;
-    data.charactersAll = data.text.replace(/[\n\r]/g, '').length;
+    if (data.text) {
+      // From Countable JS lib : https://github.com/RadLikeWhoa/Countable
+      // https://github.com/RadLikeWhoa/Countable/blob/master/Countable.js#L210
+      data.characters = data.text.replace(/\s/g, '').length;
+      data.charactersAll = data.text.replace(/[\n\r]/g, '').length;
+    } else {
+      data.characters = 0;
+      data.charactersAll = 0;
+    }
+
 
     // Some properties can be undefined. This is fine, it's easier to handle special cases.
     return data;

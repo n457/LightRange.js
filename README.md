@@ -1,5 +1,5 @@
 # LightRange.js
-#### v.2.1.1
+#### v.2.1.2
 
 A **simple** and lightweight **selection, range and caret information** library in **native JavaScript**, with an additional selection **save & restore** system.
 
@@ -16,7 +16,7 @@ A **simple** and lightweight **selection, range and caret information** library 
 LightRange.js is written in native JavaScript, so it **doesn't need any dependency**.
 Just include [LightRange.min.js](LightRange.min.js) in `<head></head>` or just before `</body>` (**recommended**).
 
-**Important** : [src/LightRange.ES6.js](src/LightRange.ES6.js) is the source code of the library, written in **ES6** and should be used directly for production in **very specific cases**. ES6 is a very recent JavaScript syntax, not supported by old browsers. The use of the minimized & regular JavaScript version [LightRange.min.js](LightRange.min.js) **is recommended**.
+**Important :** [src/LightRange.ES6.js](src/LightRange.ES6.js) is the source code of the library, written in **ES6** and should be used directly for production in **very specific cases**. ES6 is a very recent JavaScript syntax, not supported by old browsers. The use of the minimized & regular JavaScript version [LightRange.min.js](LightRange.min.js) **is recommended**.
 
 ```html
   <script src="/your-custom-path/LightRange.min.js"></script>
@@ -34,15 +34,15 @@ Just include [LightRange.min.js](LightRange.min.js) in `<head></head>` or just b
 * `yStart` : **Y** coordinate at the **beginning** of the range, in **pixels**.
 * `xEnd` : **X** coordinate at the **end** of the range, in **pixels**.
 * `yEnd` : **Y** coordinate at the **end** of the range, in **pixels**.
-* `width` : **Width** of the range.
-* `height` : **Height** of the range.
-* `charStart` : Coordinate at the **beginning** of the range, in **characters number**.
-* `charEnd` : Coordinate at the **end** of the range, in **characters number**.
+* `width` : **Width** of the range, in **pixels**.
+* `height` : **Height** of the range, in **pixels**.
+* `charStart` : Coordinate at the **beginning** of the range and **relative to the direct parent**, in **characters number**.
+* `charEnd` : Coordinate at the **end** of the range and **relative to the direct parent**, in **characters number**.
 * `characters` : **Number of characters** in the range, **without white spaces**.
 * `charactersAll` : **Number of characters** in the range, **including white spaces**.
 * `text` : **Text content** of the range.
 
-**Note** : If you want to count more than characters (paragraphs, words, etc.), you can pass the LightRange.js `text` property to the [Countable.js](https://github.com/RadLikeWhoa/Countable) library.
+**Note :** If you want to count more than characters (paragraphs, words, etc.), you can pass the LightRange.js `text` property to the [Countable.js](https://github.com/RadLikeWhoa/Countable) library.
 
 
 `lightrange.saveSelection()` & `lightrange.restoreSelection()` return a `Range` object or `null` if the features are not supported by the browser.
@@ -56,6 +56,14 @@ LightRange.js is compatible with **all modern browsers** and with **some old bro
 However, the library **doesn't provide charStart and charEnd for old browsers**.
 
 It's compatible with `contenteditable` elements, but **not compatible** with editable `<input type="text" />` and `<textarea></textarea>` elements.
+
+
+
+### Issues
+
+Found an issue with the library ?
+
+Feel free to create a topic in the [GitHub issues section](https://github.com/n457/LightRange.js/issues) of the project.
 
 
 
