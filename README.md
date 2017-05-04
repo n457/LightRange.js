@@ -1,6 +1,6 @@
 > [<img src="https://upload.wikimedia.org/wikipedia/fr/c/c8/Twitter_Bird.svg" width="32">](https://twitter.com/n457_media) Following [@n457_media](https://twitter.com/n457_media) on Twitter is **the best way** to keep you updated on my projects, including LightRange.js !
 
-<br><br>
+<br>
 
 # LightRange.js
 #### v.2.2.0
